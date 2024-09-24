@@ -1,3 +1,6 @@
+// Declare global variable to store score
+let humanScore = 0;
+let computerScore = 0;
 
 // Logic to get the computer choice
 function getComputerChoice() {
@@ -30,9 +33,8 @@ function getHumanChoice() {
         // console.log(lowChoice);
     }
 }
-    // getHumanChoice();
 
-    
+
     
 
         
