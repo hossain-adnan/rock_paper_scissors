@@ -34,7 +34,23 @@ function getHumanChoice() {
     }
 }
 
+// Write the logic to play a single round
 
-    
+// Function that takes the human and computer player choices as arguments
+    // Compare both choices:
+    // Rules: rock & scissors => rock | scissors & paper => scissors | paper > rock => paper
+
+    // Human = rock, Computer = scissors => humanScore += 1;
+
+    // IF humanChoice = rock && computerChoice = paper THEN
+        // computerScore += 1
+        // Show message:
+            // `You lose! ${computerChoice} beats ${humanChoice}`
+    // IF humanChoice = rock && computerChoice = scissors THEN
+        // humanScore += 1
+        // Show message:
+            // `You win! ${humanChoice} beats ${computerChoice}`
+
+    // LIKEWISE for paper & scissors
 
         
