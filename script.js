@@ -1,4 +1,3 @@
-console.log('Hello Wprld');
 
 // Logic to get the computer choice
 
@@ -15,6 +14,8 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice);
+// Logic to get the human choice
 
-
+    // create function
+        // Ask for user inputs: rock | paper | scissors
+        // Store the input in a variable to compare later
