@@ -19,18 +19,23 @@ function getComputerChoice() {
 // Logic to get the human choice
 function getHumanChoice() {
 
-    let choice; 
-    let isValid = false;
+    let choice; // variable to store choice
+    let isValid = 0; // validator is set to 0 as default
 
-    while (!isValid) {
-        choice = prompt("Your turn : rock | paper | scissors");
+    while ( isValid = 0 ) { // default case is to keep prompting
+
+        choice = prompt("Your turn : rock | paper | scissors"); // Prompt 
     
-        let lowChoice = choice.toLowerCase();
+        let lowChoice = choice.toLowerCase(); // Turn prompt input into lower case
 
-        if (lowChoice == 'rock' || lowChoice == 'paper' || lowChoice == 'scissors') {
-            isValid = true;
+        // If input matches/valid then 
+        if (lowChoice === 'rock' || lowChoice === 'paper' || lowChoice === 'scissors') {
+
+            isValid = 1; // change the validator to 1 thus stopping the while loop
+            
+            return lowChoice; // The input is valid so return it
         }
-        return lowChoice;
+        
         // console.log(lowChoice);
     }
 }
@@ -84,17 +89,21 @@ function playgame() {
 
     for (let index = 0; index < round; index++) {
         
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice(); 
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice(); 
         playRound (humanSelection, computerSelection);
         console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
     }
-    
+
     if (humanScore > computerScore) {
-        console.log("You are the Winner!");
+        console.log("🏁 You are the Winner!");
+    } else if (computerScore > humanScore) {
+        console.log("🏁 The computer won");
     } else {
-        console.log("The computer won");
+        console.log("🏁 It was a tie");
     }
 }
 
-        
+// Let's Play!
+playgame();   
+playgame();    
