@@ -20,9 +20,9 @@ function getComputerChoice() {
 function getHumanChoice() {
 
     let choice; // variable to store choice
-    let isValid = 0; // validator is set to 0 as default
+    let isValid = false; // validator is set to 0 as default
 
-    while ( isValid = 0 ) { // default case is to keep prompting
+    while ( !isValid ) { // default case is to keep prompting
 
         choice = prompt("Your turn : rock | paper | scissors"); // Prompt 
     
@@ -32,7 +32,7 @@ function getHumanChoice() {
         if (lowChoice === 'rock' || lowChoice === 'paper' || lowChoice === 'scissors') {
 
             isValid = 1; // change the validator to 1 thus stopping the while loop
-            
+
             return lowChoice; // The input is valid so return it
         }
         
@@ -106,4 +106,3 @@ function playgame() {
 
 // Let's Play!
 playgame();   
-playgame();    
