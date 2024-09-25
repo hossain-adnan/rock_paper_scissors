@@ -38,6 +38,8 @@ function getHumanChoice() {
 // Write the logic to play a single round
 function playRound(humanChoice, computerChoice) {
 
+    console.log(`You: ${humanChoice} | Computer: ${computerChoice}`);
+
     if (humanChoice === 'rock') {
         if (computerChoice == 'scissors') {
             humanScore += 1;
@@ -48,7 +50,6 @@ function playRound(humanChoice, computerChoice) {
         } else {
             console.log("It's a tie");
         }
-    
     }
 
     else if (humanChoice === 'paper') {
