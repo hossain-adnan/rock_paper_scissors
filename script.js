@@ -77,10 +77,24 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice(); 
+// Write the logic to play the entire game
+function playgame() {
 
-playRound (humanSelection, computerSelection);
-console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
+    const round = 5;
+
+    for (let index = 0; index < round; index++) {
+        
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice(); 
+        playRound (humanSelection, computerSelection);
+        console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
+    }
+    
+    if (humanScore > computerScore) {
+        console.log("You are the Winner!");
+    } else {
+        console.log("The computer won");
+    }
+}
 
         
