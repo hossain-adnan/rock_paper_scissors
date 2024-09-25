@@ -32,28 +32,47 @@ function getHumanChoice() {
         }
         // console.log(lowChoice);
     }
+
+    return lowChoice;
 }
 
 // Write the logic to play a single round
 
-// Function that takes the human and computer player choices as arguments
 function playRound(humanChoice, computerChoice) {
-    
-    // Compare both choices:
-    // Rules: rock & scissors => rock | scissors & paper => scissors | paper > rock => paper
 
-    // Human = rock, Computer = scissors => humanScore += 1;
+    while (humanChoice === 'rock') {
+        if (computerChoice == 'scissors') {
+            humanScore += 1;
+            console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
+        } else {
+            computerScore += 1;
+            console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        }
+    }
 
-    // IF humanChoice = rock && computerChoice = paper THEN
-        // computerScore += 1
-        // Show message:
-            // `You lose! ${computerChoice} beats ${humanChoice}`
-    // IF humanChoice = rock && computerChoice = scissors THEN
-        // humanScore += 1
-        // Show message:
-            // `You win! ${humanChoice} beats ${computerChoice}`
+    while (humanChoice === 'paper') {
+        if (computerChoice == 'rock') {
+            humanScore += 1;
+            console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
+        } else {
+            computerScore += 1;
+            console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        }
+    }
 
-    // LIKEWISE for paper & scissors
+    while (humanChoice === 'scissors') {
+        if (computerChoice == 'paper') {
+            humanScore += 1;
+            console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
+        } else {
+            computerScore += 1;
+            console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        }
+    }
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice(); 
+
+playRound (humanSelection, computerSelection);
         
