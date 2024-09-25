@@ -30,43 +30,48 @@ function getHumanChoice() {
         if (lowChoice == 'rock' || lowChoice == 'paper' || lowChoice == 'scissors') {
             isValid = true;
         }
+        return lowChoice;
         // console.log(lowChoice);
     }
-
-    return lowChoice;
 }
 
 // Write the logic to play a single round
-
 function playRound(humanChoice, computerChoice) {
 
-    while (humanChoice === 'rock') {
+    if (humanChoice === 'rock') {
         if (computerChoice == 'scissors') {
             humanScore += 1;
             console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
-        } else {
+        } else if (computerChoice == 'paper') {
             computerScore += 1;
             console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        } else {
+            console.log("It's a tie");
         }
+    
     }
 
-    while (humanChoice === 'paper') {
+    else if (humanChoice === 'paper') {
         if (computerChoice == 'rock') {
             humanScore += 1;
             console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
-        } else {
+        } else if (computerChoice == 'scissors') {
             computerScore += 1;
             console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        }  else {
+            console.log("It's a tie");
         }
     }
 
-    while (humanChoice === 'scissors') {
+    else if (humanChoice === 'scissors') {
         if (computerChoice == 'paper') {
             humanScore += 1;
             console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
-        } else {
+        }  else if (computerChoice == 'rock') {
             computerScore += 1;
             console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+        }  else {
+            console.log("It's a tie");
         }
     }
 }
@@ -75,4 +80,6 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice(); 
 
 playRound (humanSelection, computerSelection);
+console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
+
         
