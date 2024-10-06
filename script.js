@@ -34,46 +34,32 @@ scissorsBtn.addEventListener("click", () => {
     playRound('scissors', getComputerChoice())
 });
 
-
-// function getHumanChoice() {
-
-//     let choice; // variable to store choice
-//     let isValid = false; // validator is set to 0 as default
-
-//     while ( !isValid ) { // default case is to keep prompting
-
-//         choice = prompt("Your turn : rock | paper | scissors"); // Prompt 
-    
-//         let lowChoice = choice.toLowerCase(); // Turn prompt input into lower case
-
-//         // If input matches/valid then 
-//         if (lowChoice === 'rock' || lowChoice === 'paper' || lowChoice === 'scissors') {
-
-//             isValid = 1; // change the validator to 1 thus stopping the while loop
-
-//             return lowChoice; // The input is valid so return it 
-//         }
-        
-//         // console.log(lowChoice);
-//     }
-// }
-
+const divList = document.querySelector('ul'); // Div to show text
+const choiceList = document.createElement('li'); // Show choice choosen
+const roundResult = document.createElement('li');
 
 // Write the logic to play a single round
 
 function playRound(humanChoice, computerChoice) {
 
-    console.log(`You: ${humanChoice} | Computer: ${computerChoice}`);
+    choiceList.textContent = `You: ${humanChoice} | Computer: ${computerChoice}`;
+    divList.appendChild(choiceList);
+    // divList.removeChild(roundResult);  Doesn't work   
 
     if (humanChoice === 'rock') {
         if (computerChoice == 'scissors') {
             humanScore += 1;
-            console.log(`You win! Because ${humanChoice} beats ${computerChoice}`);
+            roundResult.textContent = `You win! Because ${humanChoice} beats ${computerChoice}`;
+            divList.appendChild(roundResult);
+
         } else if (computerChoice == 'paper') {
             computerScore += 1;
-            console.log(`You lose! Because ${computerChoice} beats ${humanChoice}`);
+            roundResult.textContent = `You lose! Because ${computerChoice} beats ${humanChoice}`;
+            divList.appendChild(roundResult);
+
         } else {
-            console.log("It's a tie");
+            roundResult.textContent = "It's a tie";
+            divList.appendChild(roundResult);
         }
     }
 
