@@ -17,30 +17,50 @@ function getComputerChoice() {
 }
 
 // Logic to get the human choice
-function getHumanChoice() {
 
-    let choice; // variable to store choice
-    let isValid = false; // validator is set to 0 as default
+const rockBtn = document.querySelector("#rock")
+rockBtn.addEventListener("click", () => {
+    playRound('rock', getComputerChoice()) 
+});
 
-    while ( !isValid ) { // default case is to keep prompting
 
-        choice = prompt("Your turn : rock | paper | scissors"); // Prompt 
+const paperBtn = document.querySelector("#paper")
+paperBtn.addEventListener("click", () => {
+    playRound('paper', getComputerChoice())
+});
+
+const scissorsBtn = document.querySelector("#scissors")
+scissorsBtn.addEventListener("click", () => {
+    playRound('scissors', getComputerChoice())
+});
+
+
+// function getHumanChoice() {
+
+//     let choice; // variable to store choice
+//     let isValid = false; // validator is set to 0 as default
+
+//     while ( !isValid ) { // default case is to keep prompting
+
+//         choice = prompt("Your turn : rock | paper | scissors"); // Prompt 
     
-        let lowChoice = choice.toLowerCase(); // Turn prompt input into lower case
+//         let lowChoice = choice.toLowerCase(); // Turn prompt input into lower case
 
-        // If input matches/valid then 
-        if (lowChoice === 'rock' || lowChoice === 'paper' || lowChoice === 'scissors') {
+//         // If input matches/valid then 
+//         if (lowChoice === 'rock' || lowChoice === 'paper' || lowChoice === 'scissors') {
 
-            isValid = 1; // change the validator to 1 thus stopping the while loop
+//             isValid = 1; // change the validator to 1 thus stopping the while loop
 
-            return lowChoice; // The input is valid so return it
-        }
+//             return lowChoice; // The input is valid so return it 
+//         }
         
-        // console.log(lowChoice);
-    }
-}
+//         // console.log(lowChoice);
+//     }
+// }
+
 
 // Write the logic to play a single round
+
 function playRound(humanChoice, computerChoice) {
 
     console.log(`You: ${humanChoice} | Computer: ${computerChoice}`);
@@ -85,7 +105,7 @@ function playRound(humanChoice, computerChoice) {
 // Write the logic to play the entire game
 function playgame() {
 
-    const round = 5;
+    // const round = 5;
 
     for (let index = 0; index < round; index++) {
         
