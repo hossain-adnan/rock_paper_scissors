@@ -1,10 +1,30 @@
-// Declare global variable to store score
+
+// Click button to Play
+const rockBtn = document.querySelector("#rock")
+rockBtn.addEventListener("click", () => {
+    playRound('rock', getComputerChoice());
+    checkScore(); 
+});
+
+const paperBtn = document.querySelector("#paper")
+paperBtn.addEventListener("click", () => {
+    playRound('paper', getComputerChoice());
+    checkScore();
+});
+
+const scissorsBtn = document.querySelector("#scissors")
+scissorsBtn.addEventListener("click", () => {
+    playRound('scissors', getComputerChoice());
+    checkScore();
+});
+
+
+// Scoreboard
 let humanScore = 0;
 let computerScore = 0;
 
 const scoreboard = document.querySelector('.scoreboard');
 scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
-
 
 function checkScore() {
     let winner = document.createElement('span')
@@ -21,7 +41,8 @@ function checkScore() {
     } 
 }
 
-// Logic to get the computer choice
+
+// Computer choice
 function getComputerChoice() {
 
     let getNum = Math.floor(Math.random() * 3);
@@ -34,27 +55,6 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-
-// Logic to get the human choice & play 
-
-const rockBtn = document.querySelector("#rock")
-rockBtn.addEventListener("click", () => {
-    playRound('rock', getComputerChoice());
-    checkScore(); 
-});
-
-
-const paperBtn = document.querySelector("#paper")
-paperBtn.addEventListener("click", () => {
-    playRound('paper', getComputerChoice());
-    checkScore();
-});
-
-const scissorsBtn = document.querySelector("#scissors")
-scissorsBtn.addEventListener("click", () => {
-    playRound('scissors', getComputerChoice());
-    checkScore();
-});
 
 const divList = document.querySelector('ul'); // Div to show text
 const choiceList = document.createElement('li'); // Show choice choosen
@@ -85,7 +85,7 @@ function playRound(humanChoice, computerChoice) {
             divList.appendChild(roundResult);
             scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
         }
-    } //this far
+    }
 
     else if (humanChoice === 'paper') {
         if (computerChoice == 'rock') {
