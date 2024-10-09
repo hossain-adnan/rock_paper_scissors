@@ -24,7 +24,7 @@ let humanScore = 0;
 let computerScore = 0;
 
 const scoreboard = document.querySelector('.scoreboard');
-scoreboard.textContent = `You: ${humanScore} | Computer: ${computerScore}`;
+scoreboard.innerHTML = `<strong>You:</strong> ${humanScore} | Computer: ${computerScore}`;
 
 function checkScore() {
     let winner = document.createElement('span')
