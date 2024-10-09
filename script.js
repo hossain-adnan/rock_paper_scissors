@@ -127,28 +127,4 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
-
-// Write the logic to play the entire game
-function playgame() {
-
-    // const round = 5;
-
-    for (let index = 0; index < round; index++) {
-        
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice(); 
-        playRound (humanSelection, computerSelection);
-        console.log(`Score: You ${humanScore} | Computer ${computerScore}`);
-    }
-
-    if (humanScore > computerScore) {
-        console.log("🏁 You are the Winner!");
-    } else if (computerScore > humanScore) {
-        console.log("🏁 The computer won");
-    } else {
-        console.log("🏁 It was a tie");
-    }
-}
-
-// Let's Play!
-playgame();   
+ 
